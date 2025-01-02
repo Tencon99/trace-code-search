@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "cos-js-sdk-v5": "^1.8.7",
+    "vue": "^3.2.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -18,9 +20,12 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "compression-webpack-plugin": "^11.1.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "gh-pages": "^6.2.0"
+    "gh-pages": "^6.2.0",
+    "terser-webpack-plugin": "^5.3.11",
+    "webpack-obfuscator": "^3.5.1"
   },
   "eslintConfig": {
     "root": true,
@@ -42,5 +47,5 @@
     "not dead",
     "not ie 11"
   ],
-  "homepage": "https://Tencon99.github.io/trace-code-search"
+  "homepage": "https://tencon99.github.io/trace-code-search"
 }
