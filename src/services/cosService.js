@@ -25,7 +25,7 @@ export function getBucketContents() {
           reject(err);
         } else {
           // 为每个文件生成签名 URL
-          const files = await Promise.all(
+          var files = await Promise.all(
             data.Contents.map(async (file) => {
               const signedUrl = await getSignedUrl(file.Key);
               return {
@@ -37,6 +37,17 @@ export function getBucketContents() {
               };
             })
           );
+          // 只要文件后缀为.MOV的文件，其他文件过滤掉
+          files = files.filter(
+            (file) =>
+              file.name.endsWith(".MOV") ||
+              file.name.endsWith(".mov") ||
+              file.name.endsWith(".mp4") ||
+              file.name.endsWith(".MP4") ||
+              file.name.endsWith(".jpg") ||
+              file.name.endsWith(".png")
+          );
+          // console.log("获取存储桶视频文件成功：", files);
           resolve(files);
         }
       }

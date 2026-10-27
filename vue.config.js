@@ -2,15 +2,39 @@ const { defineConfig } = require("@vue/cli-service");
 const TerserPlugin = require("terser-webpack-plugin"); // 用于代码压缩
 const CompressionWebpackPlugin = require("compression-webpack-plugin"); // 用于生成 gzip 文件
 const WebpackObfuscator = require("webpack-obfuscator"); // 用于代码混淆
+const path = require("path");
 
 module.exports = defineConfig({
+  devServer: {
+    proxy: {
+      "/event": {
+        target: "https://1258029302-7s3atimg7r.ap-guangzhou.tencentscf.com",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/event": "/event", // 可根据需要重写路径
+        },
+      },
+    },
+  },
   transpileDependencies: true,
 
   // 设置项目的基础路径 (publicPath)
-  publicPath:
-    process.env.NODE_ENV === "production"
-      ? "/trace-code-search/" // 替换为您的 GitHub 仓库名，用于生产环境
-      : "/", // 用于本地开发环境
+  publicPath: "/", // 用于本地开发环境
+
+  css: {
+    loaderOptions: {
+      less: {
+        lessOptions: {
+          // 支持 JavaScript 表达式
+          javascriptEnabled: true,
+        },
+        // 自动注入全局变量
+        additionalData: `
+          @import "${path.resolve(__dirname, "src/styles/variables.less")}";
+        `,
+      },
+    },
+  },
 
   // 配置 Webpack
   configureWebpack: (config) => {

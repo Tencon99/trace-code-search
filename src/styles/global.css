@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "ChillKai";
+  src: local('ChillKai'), url('@/assets/fonts/ChillKai.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  font-family: 'ChillKai', 'Arial', sans-serif;
+  background-color: #faf0ea;
+  color: #402e2e;
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  overflow-x: hidden;
+  /* 禁止水平滚动 */
+}
+body video::-webkit-media-controls-enclosure {
+  display: flex;
+}
+body video::-webkit-media-controls-download-button {
+  display: none;
+}
+.primary-text {
+  color: #c13870 !important;
+}
+.secondary-bg-color {
+  background-color: #f9d2dc !important;
+  color: black;
+}
+button {
+  background-color: #c13870;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #992d59;
+}

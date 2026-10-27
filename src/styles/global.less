@@ -1,0 +1,57 @@
+@import './variables.less';
+
+@font-face {
+    font-family: "ChillKai"; // 字体名称
+    src:
+        local('ChillKai'), // 本地字体名称
+        url('@/assets/fonts/ChillKai.ttf') format('truetype'); // 字体路径
+    font-weight: normal;
+    font-style: normal;
+}
+
+// 全局样式
+body {
+    margin: 0;
+    font-family: 'ChillKai', 'Arial', sans-serif;
+    background-color: @background-color;
+    color: @text-color;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    overflow-x: hidden;
+    /* 禁止水平滚动 */
+
+    video::-webkit-media-controls-enclosure {
+        display: flex;
+    }
+
+    video::-webkit-media-controls-download-button {
+        display: none;
+    }
+}
+
+.primary-text {
+    color: @primary-color  !important;
+}
+
+.secondary-bg-color {
+    background-color: @secondary-color  !important;
+    color: black;
+}
+
+// 通用按钮样式
+button {
+    background-color: @primary-color;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darken(@primary-color, 10%);
+}
