@@ -128,7 +128,6 @@ async function uploadDir(localDir, cosDir) {
   try {
     console.log("Starting cleanup...");
     for (const folder of foldersToClean) {
-      const folderPath = path.join(basePath, folder);
       await deleteFolderContents(folder + "/");
     }
 
