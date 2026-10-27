@@ -52,7 +52,7 @@ font-spider xxxxx_sindex.html
 - 部署命令：`npm run deploy`，实际执行 `npm run build && node upload-to-cos.js`，即先构建，再上传。
 - 上传位置：存储桶根目录 `/`。当前脚本未使用 `.env` 中的 `COS_BASE_PATH` 配置。
 - 早期 GitHub Pages 地址：https://tencon99.github.io/trace-code-search/ （仍可访问，页面响应头显示最后修改日期为 2025 年 1 月 2 日）。
-- Git 远程仓库：https://gitee.com/huang_tengqing/trace-code-search.git
+- Git 远程仓库：git@github.com:Tencon99/trace-code-search.git
 
 ### 再次部署前需要处理的问题
 

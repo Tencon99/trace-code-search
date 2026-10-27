@@ -2,6 +2,9 @@
 node_modules
 /dist
 
+# font-spider 原始字体缓存（体积大，可本地重新生成）
+.font-spider/
+
 
 # local env files
 .env.local
